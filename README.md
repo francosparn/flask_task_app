@@ -11,8 +11,8 @@ Below, I share some screenshots of the application interface.
 # Index with tasks added
 ![](https://i.imgur.com/GaqskGJ.png)
 
-# View task
+# Task preview
 ![](https://i.imgur.com/J1GjRNC.png)
 
-# Edit task
+# Task edit preview
 ![](https://i.imgur.com/8Jmx6MC.png)
