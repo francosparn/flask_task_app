@@ -1,11 +1,14 @@
 # flask-taskapp
-CRUD type task web application (Create, Read, Update, Delete).
+Application of CRUD type tasks (Create, Read, Update, Delete).
 
-This application is built in the Python programming language and uses a framework called Flask. For its styles, it uses the Bootstrap framework, which gives it a simple, pleasant and elegant design. The database used to develop this project is MySQL.
+This application is developed with the Python programming language, it uses a framework called Flask. The structure is logically built in HTML and the Bootstrap v5 framework was used to style it, which provides a simple, elegant and pleasant design. The database used for this project is MySQL.
 
-# Index
+Below, I share some images of the application interface.
+
+# Index without tasks added
 ![](https://i.imgur.com/hRhhwkI.png)
 
+# Index with tasks added
 ![](https://i.imgur.com/GaqskGJ.png)
 
 # View task
