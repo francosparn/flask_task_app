@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskApp - You task application</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../static/images/favicon.ico">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+          <a href="/" class="title">
+            <img src="../static/images/logo.png" alt="Logo" /> TaskApp
+          </a>
+          <div class="social d-flex">
+            <a href="/">
+                <img src="../static/images/twitter.png" alt="Twitter" />
+            </a>
+            <a href="/">
+                <img src="../static/images/instagram.png" alt="Instagram" />
+            </a>
+            <a href="/">
+                <img src="../static/images/facebook.png" alt="Facebook" />
+            </a>
+          </div>
+        </div>
+    </nav>
+
+    <!-- Container -->
+    <div class="container">
+        {% block body %}
+        {% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-5 text-center">
+        <span class="text-footer mt-5">Developed by Franco Sparn &copy; 2022</span>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+</body>
+</html>

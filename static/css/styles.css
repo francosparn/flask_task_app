@@ -1,0 +1,227 @@
+/* General */
+*{
+    font-family: 'DM Sans', sans-serif;
+}
+
+body{
+    background: rgb(228, 228, 228);
+}
+
+thead{
+    border-bottom: 2px solid transparent;
+}
+
+tbody{
+    color: #777777;
+    font-size: 16px;
+}
+
+input[type="text"],
+input[type="date"],
+button[type="submit"],
+select,
+textarea,
+::placeholder{
+    font-size: 16px !important;
+}
+
+td{
+    padding-top: 25px !important;
+}
+
+/* Navbar */
+.navbar{
+    background-color: #759eff;
+}
+
+.title{
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #FFF;
+}
+
+.title:hover{
+    color: rgb(241, 241, 241);
+    transition: all .5s ease-in-out;
+}
+
+.social img{
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+/* Alert */
+.alert{
+    font-size: 16px;
+    transition: 5s all;
+}
+
+#vacio{
+    display: none;
+}
+
+/* Task form */
+.th{
+    background-color: #759eff;
+}
+
+.btn-save{
+    width: 100%;
+    background-color: #759eff;
+    border: none;
+}
+
+.btn-save:hover{
+    background-color: #668fec;
+}
+
+/* Tasks table */
+.category{
+    font-size: 16px;
+}
+
+.name-task{
+    font-weight: 600;
+    color: rgb(70, 70, 70);
+    cursor: pointer;
+}
+
+.state, 
+.priority{
+    border-radius: 10px;
+    padding: 5px;
+    color: #FFF;
+    border: none;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.notstarted{
+    background-color: #8D42F8;
+}
+.notstarted:hover{
+    background-color: #8137e9;
+    transition: .5s all;
+}
+
+.complete{
+    background-color: #35BA7A;
+}
+
+.complete:hover{
+    background-color: #349e6b;
+    transition: .5s all;
+}
+
+.incomplete{
+    background-color: #F15E40;
+}
+
+.incomplete:hover{
+    background-color: #d64d32;
+    transition: .5s all;
+}
+
+.inprogress{
+    background-color: #1b83f1;
+}
+
+.inprogress:hover{
+    background-color: #1571d3;
+    transition: .5s all;
+}
+
+.low{
+    background-color: rgb(91, 199, 59);
+}
+
+.low:hover{
+    background-color: rgb(73, 168, 44);
+    transition: .5s all;
+}
+
+.medium{
+    background-color: rgb(233, 201, 24);
+}
+
+.medium:hover{
+    background-color: rgb(199, 180, 12);
+    transition: .5s all;
+}
+
+.high{
+    background-color: rgb(189, 16, 16);
+}
+
+.high:hover{
+    background-color: rgb(158, 17, 17);
+    transition: .5s all;
+}
+
+.actions{
+    padding-top: 20px !important;
+}
+
+.actions img{
+    width: 14px;
+    height: 14px;
+}
+
+.btn-actions{
+    background-color: transparent;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 5px;
+    padding: 5px 8px;   
+}
+
+.btn-actions:hover{
+    background-color: rgb(235, 235, 235);
+    transition: .5s all;
+}
+
+/* View tasks */
+.text-description{
+    font-size: 16px;
+}
+
+.text-date{
+    font-size: 14px;
+}
+
+.btn-home{
+    text-decoration: none !important;
+    color: #FFF;
+    background-color: #759eff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.btn-home:hover{
+    background-color:#668fec;
+    transition: .5s all;
+    color: #FFF;
+}
+
+.btn-edit{
+    text-decoration: none !important;
+    color: #FFF;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.btn-edit:hover{
+    background-color:rgb(31, 31, 31);
+    transition: .5s all;
+    color: #FFF;
+}
+
+/* Footer */
+.text-footer{
+    font-weight: 600;
+    color: rgb(95, 95, 95);
+    cursor: pointer;
+}

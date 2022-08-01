@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="row my-4 d-flex align-items-center">
+    <div class="col-md-6 mb-4 text-center">
+        <img src="../static/images/image.png" class="img-fluid" alt="Edit task image" />
+    </div>
+    <div class="col-md-6">
+        <form action="/update/{{task.0}}" method="POST">
+            <h3 class="mb-3">Edit task</h3>
+            <div class="mb-3">
+                <input class="form-control" type="text" name="name" placeholder="Task name" value="{{task.1}}" />
+            </div>
+            <div class="mb-3">
+                <textarea class="form-control" name="description" cols="10" rows="5" placeholder="Task description">{{task.2}}</textarea>
+            </div>
+            <div class="mb-3">
+                <input class="form-control" type="date" name="day" value="{{task.3}}" />
+            </div>
+            <div class="mb-3">
+                <select class="form-select" aria-label="" name="state">
+                    <option selected>{{task.4}}</option>
+                    <option value="Not Started">Not Started</option>
+                    <option value="Complete">Complete</option>
+                    <option value="Incomplete">Incomplete</option>
+                    <option value="In Progress">In Progress</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <select class="form-select" aria-label="" name="priority">
+                    <option selected>{{task.5}}</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+            </div>
+            <button class="btn-save btn btn-success" type="submit">Save</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

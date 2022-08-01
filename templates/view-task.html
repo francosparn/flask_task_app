@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="row my-4">
+    <h3 class="mb-3">My task is...</h3>
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5><strong>{{task.1}}</strong></h5>
+                <p class="text-date"><strong>Date</strong>: {{task.3}}</p>
+                <p class="text-description">{{task.2}}</p>
+                <p class="text-description"><strong>State</strong>: {{task.4}} - <strong>Priority</strong>: {{task.5}}</p>
+            </div>
+            <div class="card-footer text-end">
+                <button class="btn-edit">
+                    <a href="/edit/{{task.0}}" class="btn-edit">
+                        Edit
+                    </a>
+                </button>
+                <button class="btn-home">
+                    <a href="/" class="btn-home">
+                        <img src="../static/images/back.png" alt="Back" /> Go to index
+                    </a>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 text-center">
+        <img src="../static/images/list.png" class="img-fluid" alt="Person" />
+        <img src="../static/images/checklist.png" class="img-fluid my-3" alt="Task" />
+    </div>
+</div>
+
+{% endblock %}

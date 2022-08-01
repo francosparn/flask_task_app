@@ -1,0 +1,116 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<!-- Task Form -->
+<div class="row my-4">
+    <div class="col-md-4 tasks-container">
+        <form action="/add-task" class="form" method="POST">
+            <h3 class="mb-3">Add tasks</h3>
+            <div class="mb-3">
+                <input class="form-control" type="text" name="name" id="taskname" placeholder="Task name" minlength="5" maxlength="35" required />
+            </div>
+            <div class="mb-3">
+                <textarea class="form-control" name="description" cols="10" rows="5" placeholder="Task description" minlength="5" maxlength="350" required></textarea>
+            </div>
+            <div class="mb-3">
+                <input class="form-control" type="date" name="day" required />
+            </div>
+            <div class="mb-3">
+                <select class="form-select" aria-label="" name="state" required>
+                    <option value="">Select task status</option>
+                    <option value="Not Started">Not Started</option>
+                    <option value="Complete">Complete</option>
+                    <option value="Incomplete">Incomplete</option>
+                    <option value="In Progress">In Progress</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <select class="form-select" aria-label="" name="priority" required>
+                    <option value="">Select task priority</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+            </div>
+            <button class="btn-save mb-4 btn btn-success" type="submit">Save</button>
+        </form>
+    </div>
+
+    <!-- Alerts -->
+    <div class="col-md-8">
+        <h3 class="mb-3">My tasks</h3>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-success" id="alert" role="alert">
+                <img src="../static/images/check.png" alt="" /> {{ message }}
+            </div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <!-- Task Table -->
+        {% if tasks %}
+        <div class="table-responsive">
+            <table class="table bg-secondary text-center">
+                <thead class="th text-secondary">
+                    <tr class="category">
+                        <td>#</td>
+                        <td>Name</td>
+                        <td>Date</td>
+                        <td>State</td>
+                        <td>Priority</td>
+                        <td>Actions</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for task in tasks %}
+                        <tr>
+                            <td>{{ task.0 }}</td>
+                            <td class="name-task">{{ task.1 }}</td>
+                            <td>{{ task.3 }}</td>
+                            <td>
+                            {% if task.4 == 'Not Started' %}
+                                <span class="state notstarted">{{ task.4 }}</span>
+                            {% elif task.4 == 'Complete' %}
+                                <span class="state complete">{{ task.4 }}</span>
+                            {% elif task.4 == 'Incomplete' %}
+                                <span class="state incomplete">{{ task.4 }}</span>
+                            {% else %}
+                                <span class="state inprogress">{{ task.4 }}</span>
+                            {% endif %}   
+                            </td>
+                            <td>
+                            {% if task.5 == 'Low' %}
+                                <span class="priority low">{{ task.5 }}</span>
+                            {% elif task.5 == 'Medium' %}
+                                <span class="priority medium">{{ task.5 }}</span>
+                            {% else %}
+                                <span class="priority high">{{ task.5 }}</span>
+                            {% endif %} 
+                            </td>
+                            <td class="actions">
+                                <button type="button" class="btn-actions" data-toggle="tooltip" data-placement="top" title="View task">
+                                    <a href="/view/{{task.0}}"><img src="../static/images/view.png" class="btn-view" alt="View" /></a>
+                                  </button>
+                                <button type="button" class="btn-actions" data-toggle="tooltip" data-placement="top" title="Edit task">
+                                    <a href="/edit/{{task.0}}"><img src="../static/images/edit.png" class="btn-view" alt="Edit" /></a>
+                                  </button>
+                                  <button type="button" class="btn-actions" data-toggle="tooltip" data-placement="top" title="Delete task">
+                                    <a href="/delete/{{task.0}}"><img src="../static/images/delete.png" class="btn-delete" alt="Delete" /></a>
+                                  </button>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+            <!-- Alert -->
+            <p class="alert alert-warning" id="empty">
+                <img src="../static/images/info.png" alt="Info" /> There are currently no tasks registered
+            </p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
